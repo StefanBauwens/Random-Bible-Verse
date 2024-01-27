@@ -4,13 +4,14 @@
         <script src="RandomBibleVerse.js"></script>
         
         <script>
-            function onButtonClick() {
+            async function onButtonClick() {
                 var verseTitle = document.getElementById("verse-title");
                 var verseContent = document.getElementById("verse-content");
                 
-                //var verse = 
+                var verse = await getRandomVerse(nivTranslation);
                 
-                //verseTitle.textContent = 
+                verseTitle.textContent = verse.book.name + " " + verse.chapterId + ":" + verse.verseId;
+                verseContent.textContent = verse.verse;
             }
         </script>
     </head>
